@@ -67,41 +67,16 @@
   "jest": {
     "projects": [
       {
-        "displayName": "app",
         "preset": "jest-expo",
         "testMatch": [
           "<rootDir>/src/**/__tests__/**/*.test.ts?(x)"
-        ],
-        "testPathIgnorePatterns": [
-          "/node_modules/",
-          "<rootDir>/src/core/db/",
-          "<rootDir>/src/features/.*/data/.*repository"
         ],
         "moduleNameMapper": {
           "^@/(.*)$": "<rootDir>/src/$1"
         }
       },
       {
-        "displayName": "db",
-        "testEnvironment": "node",
-        "testMatch": [
-          "<rootDir>/src/core/db/__tests__/**/*.test.ts",
-          "<rootDir>/src/features/**/data/__tests__/*repository*.test.ts"
-        ],
-        "transform": {
-          "^.+\\.[jt]sx?$": [
-            "babel-jest",
-            {
-              "presets": [
-                "babel-preset-expo"
-              ]
-            }
-          ]
-        },
-        "moduleNameMapper": {
-          "^@/(.*)$": "<rootDir>/src/$1"
-        },
-        "setupFilesAfterEnv": [
+        "setupFiles": [
           "<rootDir>/jest.setup.ts"
         ]
       }
