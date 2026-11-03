@@ -8,7 +8,8 @@
     "scheme": "healthmatemobile",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "com.ishanhettiarachchi.healthmatemobile"
     },
     "android": {
       "adaptiveIcon": {
@@ -17,14 +18,13 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
-    },
-    "web": {
-      "output": "server",
-      "favicon": "./assets/images/favicon.png"
+      "predictiveBackGestureEnabled": false,
+      "package": "com.ishanhettiarachchi.healthmatemobile"
     },
     "plugins": [
       "expo-router",
+      "expo-sqlite",
+      "@react-native-community/datetimepicker",
       [
         "expo-splash-screen",
         {
