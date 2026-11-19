@@ -34,6 +34,18 @@ export async function getSettings(db: SQLiteDatabase): Promise<AppSettings> {
   };
 }
 
+export async function saveGoals(
+  db: SQLiteDatabase,
+  goals: DailyGoals,
+): Promise<void> {
+  // One transaction, so the three goals are saved together or not at all.
+  await db.withTransactionAsync(async () => {
+    await db.runAsync(UPSERT, ["goal.steps", String(goals.steps)]);
+    await db.runAsync(UPSERT, ["goal.calories", String(goals.calories)]);
+    await db.runAsync(UPSERT, ["goal.water", String(goals.water)]);
+  });
+}
+
 export async function saveTheme(
   db: SQLiteDatabase,
   theme: ThemePreference,
