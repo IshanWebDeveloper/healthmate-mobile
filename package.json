@@ -67,21 +67,15 @@
     "node": ">= 22.13"
   },
   "jest": {
-    "projects": [
-      {
-        "preset": "jest-expo",
-        "testMatch": [
-          "<rootDir>/src/**/__tests__/**/*.test.ts?(x)"
-        ],
-        "moduleNameMapper": {
-          "^@/(.*)$": "<rootDir>/src/$1"
-        }
-      },
-      {
-        "setupFiles": [
-          "<rootDir>/jest.setup.ts"
-        ]
-      }
+    "preset": "jest-expo",
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.test.ts?(x)"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "setupFiles": [
+      "<rootDir>/jest.setup.ts"
     ]
   },
   "packageManager": "pnpm@10.28.0",
